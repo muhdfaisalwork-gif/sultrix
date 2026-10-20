@@ -1,174 +1,45 @@
-# sultrix-website
-<div align="center">
+# Sultrix
 
-```
- ███████╗██╗   ██╗██╗  ████████╗██████╗ ██╗██╗  ██╗
- ██╔════╝██║   ██║██║  ╚══██╔══╝██╔══██╗██║╚██╗██╔╝
- ███████╗██║   ██║██║     ██║   ██████╔╝██║ ╚███╔╝
- ╚════██║██║   ██║██║     ██║   ██╔══██╗██║ ██╔██╗
- ███████║╚██████╔╝███████╗██║   ██║  ██║██║██╔╝ ██╗
- ╚══════╝ ╚═════╝ ╚══════╝╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝
-```
+**The Trading OS for crypto, forex and stocks.** Separate AI agent teams for each market, a risk dashboard, alerts, and a phone app (PWA). Hands-free, 24/7.
 
-**Automated Crypto Grid Trading Bot**
+[Website](https://sultrixtrade.com) · [30-second product tour](https://sultrixtrade.com/#demo) · [Download](https://sultrixtrade.com/download)
 
-[![Download](https://img.shields.io/badge/Download-v1.0.0-00e5c3?style=for-the-badge)](https://sultrixtrade.com/download)
-[![License](https://img.shields.io/badge/License-Commercial-ffc53d?style=for-the-badge)](https://sultrixtrade.com)
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-blue?style=for-the-badge)](https://sultrixtrade.com/download)
-[![Trial](https://img.shields.io/badge/Free%20Trial-30%20Days-green?style=for-the-badge)](https://sultrixtrade.com/download)
+> Demo footage uses a demo account with test money. Trading carries risk of loss. Nothing here is financial advice or a prediction of future performance.
 
-[**Download**](https://sultrixtrade.com/download) · [**Website**](https://sultrixtrade.com) · [**Buy License — $5/mo**](https://sellix.io/YOURSTORE)
-
-</div>
-
----
-
-## What is Sultrix?
-
-Sultrix is an automated crypto grid trading bot powered by **5 AI agents**. It scans markets, picks the best coins, manages risk and executes trades 24/7 — completely hands-free.
-
-Set it up once. Let it run forever.
-
-```
-Live Dashboard  — Monitor P&L, fills, agents from any browser or phone
-5 AI Agents     — Auto-pick coins, manage risk, execute trades
-Telegram Alerts — Hourly P&L updates straight to your phone
-8 Exchanges     — Binance, Bybit, OKX, KuCoin, Kraken and more
-Mobile PWA      — Install on phone, monitor from anywhere
-Free Trial      — 30 days full access, no credit card needed
-```
-
----
-
-## 5 AI Agents
-
-| Agent | Role | What it does |
-|-------|------|-------------|
-| **Regime Agent** | Market Scanner | Scans all coins, identifies trending vs ranging markets |
-| **Signal Agent** | Coin Selector | Scores coins by volatility and trend strength |
-| **Risk Agent** | Safety Guard | Monitors drawdown, halts trading if limits breached |
-| **Execution Agent** | Order Manager | Places and manages all grid orders on your exchange |
-| **Orchestrator** | Master Controller | Coordinates all 4 agents every 60 seconds |
-
----
-
-## Supported Exchanges
-
-Binance · Bybit · OKX · KuCoin · Kraken · Gate.io · Bitget · MEXC
-
-All exchanges support **testnet/sandbox mode** — test safely before trading real funds.
-
----
-
-## Quick Start
-
-**1. Download**
-```
-sultrixtrade.com/download   or   GitHub Releases (this repo)
-```
-
-**2. Run**
-```
-1. Unzip Sultrix.zip
-2. Double-click Sultrix.exe
-3. Press START
-4. Dashboard opens at localhost:5000
-5. Enter exchange API keys in the setup wizard
-6. Bot starts trading
-```
-
-**3. License**
-```
-Free trial: 30 days full access — no setup, just run it.
-After trial: $5/month — pay with USDT/BTC/ETH at sultrixtrade.com
-```
-
----
-
-## Features
-
-**Trading**
-- Grid strategy — profits from price bouncing between levels
-- Auto coin rotation — swaps underperforming coins automatically
-- 1 to 5 coins simultaneously — auto or manual selection
-- Configurable USDT budget — auto-splits across active slots
-
-**Risk Management**
-- Drawdown limit per coin slot
-- Loss streak guard
-- Equal position sizing
-- Kill switch — cancels all orders instantly
-
-**Dashboard (browser-based)**
-- Real-time P&L charts and equity curve
-- Live status of all 5 agents
-- Fill history and trade log
-- Exchange API key setup
-- Telegram alert configuration
-- License activation
-
-**Telegram Alerts**
-- Hourly P&L summary
-- Big fill notifications
-- Risk halt alerts
-- Daily 24h performance report
-- Coin rotation updates
-- Dead-bot warnings
-
----
-
-## System Requirements
+## What it is
 
 | | |
-|--|--|
-| OS | Windows 10 / Windows 11 |
-| RAM | 4 GB minimum |
-| Storage | 500 MB |
-| Network | Internet required |
-| Python | Not required |
+|---|---|
+| **Markets** | Crypto (CCXT exchanges), forex and metals (MetaTrader 5), US stocks (Alpaca, beta) |
+| **Instruments** | 66 (30 crypto coins plus 36 forex, metals, oil and index instruments) |
+| **Agents** | 40+ AI agents: market scanning, signal selection, risk guard, execution, a council that can veto trades, memory and lessons per market |
+| **Strategy** | Automated grid trading with risk limits and a kill switch |
+| **Alerts** | Telegram and email, plus a mobile PWA |
+| **Platforms** | Windows (macOS and Linux in beta) |
+| **Plans** | 30-day free trial, then plans from $5 per 30 days at [sultrixtrade.com](https://sultrixtrade.com) |
 
----
+The Sultrix application is a commercial product and is not in this repository.
 
-## Pricing
+## What is open source here: the Sultrix Audit Toolkit
 
-| Plan | Price | What you get |
-|------|-------|-------------|
-| **Free Trial** | Free | 30 days full access, no card needed |
-| **Monthly License** | $5/month | Full access, 30-day license key |
+Read-only tools that check a Sultrix database against independent evidence, so results can be verified instead of trusted. They never place orders and never write to the database.
 
-Pay with USDT, BTC or ETH at [sultrixtrade.com](https://sultrixtrade.com)
+| Tool | Question it answers |
+|---|---|
+| [`truth_check.py`](sultrix_audit/truth_check.py) | Does the database result match the broker's own books (balance minus deposits)? |
+| [`performance_report.py`](sultrix_audit/performance_report.py) | Honest ROI, win rate, profit factor, drawdown, forced sales, with caveats |
+| [`exit_study.py`](sultrix_audit/exit_study.py) | Would a trailing exit have beaten the grid exit on real closed lots? |
+| [`pattern_study.py`](sultrix_audit/pattern_study.py) | Do candle and trend patterns carry an edge on real data, under a strict test? |
+| [`market_parity.py`](sultrix_audit/market_parity.py) | Do crypto, forex and stocks each have comparable agents, memory and lessons? |
 
----
+```
+python sultrix_audit/truth_check.py --db bot_state.db
+python sultrix_audit/market_parity.py --db bot_state.db
+python -m pytest tests
+```
 
-## Changelog
+Python 3.10 or newer, standard library only (`truth_check` also uses `MetaTrader5` when it is installed). More in [`sultrix_audit/README.md`](sultrix_audit/README.md).
 
-**v1.0.0**
-- 5-agent trading system
-- Flask web dashboard (5 pages)
-- Telegram alerts (8 alert types)
-- 8 exchanges via CCXT
-- 30-day trial + Neon DB license validation
-- Cloudflare tunnel for mobile access
-- One-click Sultrix.exe launcher
-- PWA mobile support
-- First-run setup wizard
+## Licence
 
----
-
-## Support
-
-- Website: [sultrixtrade.com](https://sultrixtrade.com)
-- Issues: [GitHub Issues](https://github.com/muhdfaisalwork-gif/sultrix/issues)
-
----
-
-## License
-
-Sultrix is commercial software. A 30-day free trial is included with every download.
-After the trial, a monthly license key is required — available at [sultrixtrade.com](https://sultrixtrade.com).
-
-Source code is provided for transparency. Redistribution or commercial use without permission is not allowed.
-
----
-
-<div align="center">sultrixtrade.com</div>
+The audit toolkit is licensed under the Apache License 2.0 (see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE)). The Sultrix trading application is a separate commercial product.
